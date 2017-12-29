@@ -8,7 +8,7 @@
           </li>
         </ul>
         <h3 class="text-muted">vue-focuspoint-component</h3>
-        <p class="lead">Set focuspoint on element</p>
+        <p class="lead">Set focus point on elements</p>
       </header>
       <hr>
       <main role="main">
@@ -36,7 +36,7 @@
             <p><code>slot="pin"</code> Set your own pin</p>
             <focus-point :offset.sync="imageThree">
               <template slot="pin">
-                <span class="badge badge-primary">TEST</span>
+                <span class="badge badge-primary">artwork ;)</span>
               </template>
               <img class="img-fluid" src="./assets/image_1.jpg">
             </focus-point>
