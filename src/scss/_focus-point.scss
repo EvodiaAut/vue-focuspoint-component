@@ -1,17 +1,17 @@
-$body: 20px;
-
 .focus-point {
   position: relative;
   cursor: crosshair;
 
-  &-pin {
-    position: absolute;
+  > * {
     pointer-events: none;
-    min-width: $body;
-    min-height: $body;
+  }
+
+  &-pin {
     transition: all .2s ease-in-out;
+    position: absolute;
+    padding: 10px;
     border-radius: 3px;
-    background: rgba(0, 0, 0, 0.5);
-    box-shadow: 0 0 5px #fff;
+    background: rgba(255, 0, 0, 0.5);
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
   }
 }
