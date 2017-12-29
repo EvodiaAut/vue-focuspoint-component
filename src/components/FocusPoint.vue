@@ -1,9 +1,9 @@
 <template>
   <div class="focus-point" @click="onClick">
     <slot></slot>
-    <slot name="focus">
-      <span class="focus-point-focus" :style="focusStyle"></span>
-    </slot>
+    <span ref="pin" class="focus-point-pin" :style="pinStyle">
+      <slot name="pin"></slot>
+    </span>
   </div>
 </template>
 
@@ -11,47 +11,59 @@
 export default {
   name: 'FocusPoint',
   props: {
-    offset: {
+    offset: Object,
+    offsetDefault: {
       type: Object,
-      default: {
+      default: () => ({
         x: 50,
         y: 50
-      }
+      })
     }
   },
   data() {
     return {
-      coordinates: this.offset,
-      boundingClientRect: null
+      coordinates: this.offset ? this.offset : this.offsetDefault,
+      boundingElement: null,
+      boundingPin: null
     }
+  },
+  mounted() {
+    this.boundingPin = this.$refs.pin.getBoundingClientRect()
   },
   methods: {
     onClick({ offsetX, offsetY }) {
-      this.boundingClientRect = this.$el.getBoundingClientRect()
+      this.boundingElement = this.$el.getBoundingClientRect()
       this.coordinates = {
         x: offsetX,
         y: offsetY
       }
-
-      this.$emit('update:offset', { ...this.coordinatesPercent, ...{ pixel: this.coordinates } })
     }
   },
   computed: {
     coordinatesPercent() {
-      if (!this.boundingClientRect) {
+      if (!this.boundingElement) {
         return this.coordinates
       }
 
       return {
-        x: (this.coordinates.x / this.boundingClientRect.width) * 100,
-        y: (this.coordinates.y / this.boundingClientRect.height) * 100
+        x: (this.coordinates.x / this.boundingElement.width) * 100,
+        y: (this.coordinates.y / this.boundingElement.height) * 100
       }
     },
-    focusStyle() {
-      return {
-        left: `${this.coordinatesPercent.x}%`,
-        top: `${this.coordinatesPercent.y}%`
+    pinStyle() {
+      if (!this.boundingPin) {
+        return null
       }
+
+      return {
+        top: `calc(${this.coordinatesPercent.y}% - ${this.boundingPin.height / 2}px)`,
+        left: `calc(${this.coordinatesPercent.x}% - ${this.boundingPin.width / 2}px)`
+      }
+    }
+  },
+  watch: {
+    coordinates() {
+      this.$emit('update:offset', { ...this.coordinatesPercent, ...{ pixel: this.coordinates } })
     }
   }
 }
