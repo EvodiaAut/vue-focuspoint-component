@@ -14,7 +14,7 @@
       <main role="main">
         <div class="row my-5">
           <div class="col-md-6">
-            <h4>Fell free set a focuspoint</h4>
+            <h4>Feel free set a focus point</h4>
             <p>Click on the element (picture)</p>
             <focus-point :offset.sync="imageOne">
               <img class="img-fluid" src="./assets/image_1.jpg">
@@ -32,8 +32,8 @@
         </div>
         <div class="row my-5">
           <div class="col-md-6">
-            <h4>Own focus marker</h4>
-            <p>With <code>slot="pin"</code> can you set our own pin</p>
+            <h4>Own focus pin</h4>
+            <p><code>slot="pin"</code> Set your own pin</p>
             <focus-point :offset.sync="imageThree">
               <template slot="pin">
                 <span class="badge badge-primary">TEST</span>
@@ -43,8 +43,8 @@
             <pre>{{imageThree}}</pre>
           </div>
           <div class="col-md-6">
-            <h4>Antoher example</h4>
-            <p>Test on a other element</p>
+            <h4>Other elements</h4>
+            <p>Test on another element</p>
             <focus-point :offset.sync="imageFour">
               <div class="jumbotron">
                 <h1 class="display-4">Hello, world!</h1>
