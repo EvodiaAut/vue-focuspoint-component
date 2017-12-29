@@ -31,11 +31,11 @@ export default {
     this.boundingPin = this.$refs.pin.getBoundingClientRect()
   },
   methods: {
-    onClick({ offsetX, offsetY }) {
+    onClick({ clientX, clientY }) {
       this.boundingElement = this.$el.getBoundingClientRect()
       this.coordinates = {
-        x: offsetX,
-        y: offsetY
+        x: clientX - this.boundingElement.left,
+        y: clientY - this.boundingElement.top
       }
     }
   },
