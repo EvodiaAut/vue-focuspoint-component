@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div class="container">
+    <div class="my-5 container">
       <header class="my-3 clearfix">
         <ul class="nav float-right">
           <li class="nav-item">
@@ -12,9 +12,10 @@
       </header>
       <hr>
       <main role="main">
-        <div class="row">
+        <div class="row my-5">
           <div class="col-md-6">
             <h4>Fell free set a focuspoint</h4>
+            <p>Click on the element (picture)</p>
             <focus-point :offset.sync="imageOne">
               <img class="img-fluid" src="./assets/image_1.jpg">
             </focus-point>
@@ -22,22 +23,40 @@
           </div>
           <div class="col-md-6">
             <h4>A saved focuspoint</h4>
+            <p>Use <code>:offset.sync="imageTwo"</code> for get new coordinates</p>
             <focus-point :offset.sync="imageTwo">
               <img class="img-fluid" src="./assets/image_1.jpg">
             </focus-point>
             <pre>{{imageTwo}}</pre>
           </div>
         </div>
-        <div class="row">
+        <div class="row my-5">
           <div class="col-md-6">
             <h4>Own focus marker</h4>
             <p>With <code>slot="pin"</code> can you set our own pin</p>
-            <focus-point>
+            <focus-point :offset.sync="imageThree">
               <template slot="pin">
                 <span class="badge badge-primary">TEST</span>
               </template>
               <img class="img-fluid" src="./assets/image_1.jpg">
             </focus-point>
+            <pre>{{imageThree}}</pre>
+          </div>
+          <div class="col-md-6">
+            <h4>Antoher example</h4>
+            <p>Test on a other element</p>
+            <focus-point :offset.sync="imageFour">
+              <div class="jumbotron">
+                <h1 class="display-4">Hello, world!</h1>
+                <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+                <hr class="my-4">
+                <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+                <p class="lead">
+                  <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+                </p>
+              </div>
+            </focus-point>
+            <pre>{{imageFour}}</pre>
           </div>
         </div>
       </main>
@@ -56,7 +75,9 @@ export default {
       imageTwo: {
         x: 94,
         y: 19
-      }
+      },
+      imageThree: null,
+      imageFour: null
     }
   },
   components: {
@@ -98,7 +119,7 @@ export default {
   // @import "../node_modules/bootstrap/scss/breadcrumb";
   // @import "../node_modules/bootstrap/scss/pagination";
   @import "../node_modules/bootstrap/scss/badge";
-  // @import "../node_modules/bootstrap/scss/jumbotron";
+  @import "../node_modules/bootstrap/scss/jumbotron";
   // @import "../node_modules/bootstrap/scss/alert";
   // @import "../node_modules/bootstrap/scss/progress";
   // @import "../node_modules/bootstrap/scss/media";
