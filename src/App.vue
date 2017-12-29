@@ -1,20 +1,46 @@
 <template>
   <div id="app">
     <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <focus-point :offset.sync="imageOne">
-            <img class="img-fluid" src="./assets/image_1.jpg">
-          </focus-point>
-          <pre>{{imageOne}}</pre>
+      <header class="my-3 clearfix">
+        <ul class="nav float-right">
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/EvodiaAut/vue-focuspoint-component" target="_blank">Github</a>
+          </li>
+        </ul>
+        <h3 class="text-muted">vue-focuspoint-component</h3>
+        <p class="lead">Set focuspoint on element</p>
+      </header>
+      <hr>
+      <main role="main">
+        <div class="row">
+          <div class="col-md-6">
+            <h4>Fell free set a focuspoint</h4>
+            <focus-point :offset.sync="imageOne">
+              <img class="img-fluid" src="./assets/image_1.jpg">
+            </focus-point>
+            <pre>{{imageOne}}</pre>
+          </div>
+          <div class="col-md-6">
+            <h4>A saved focuspoint</h4>
+            <focus-point :offset.sync="imageTwo">
+              <img class="img-fluid" src="./assets/image_1.jpg">
+            </focus-point>
+            <pre>{{imageTwo}}</pre>
+          </div>
         </div>
-        <div class="col-md-6">
-          <focus-point :offset.sync="imageTwo">
-            <img class="img-fluid" src="./assets/image_2.jpg">
-          </focus-point>
-          <pre>{{imageTwo}}</pre>
+        <div class="row">
+          <div class="col-md-6">
+            <h4>Own focus marker</h4>
+            <p>With <code>slot="pin"</code> can you set our own pin</p>
+            <focus-point>
+              <template slot="pin">
+                <span class="badge badge-primary">TEST</span>
+              </template>
+              <img class="img-fluid" src="./assets/image_1.jpg">
+            </focus-point>
+          </div>
         </div>
-      </div>
+      </main>
     </div>
   </div>
 </template>
@@ -26,13 +52,10 @@ export default {
   name: 'app',
   data() {
     return {
-      imageOne: {
+      imageOne: null,
+      imageTwo: {
         x: 94,
         y: 19
-      },
-      imageTwo: {
-        x: 92,
-        y: 76
       }
     }
   },
@@ -55,7 +78,7 @@ export default {
   @import "../node_modules/bootstrap/scss/variables";
   @import "../node_modules/bootstrap/scss/mixins";
   // @import "../node_modules/bootstrap/scss/root";
-  @import "../node_modules/bootstrap/scss/print";
+  // @import "../node_modules/bootstrap/scss/print";
   @import "../node_modules/bootstrap/scss/reboot";
   @import "../node_modules/bootstrap/scss/type";
   @import "../node_modules/bootstrap/scss/images";
@@ -69,12 +92,12 @@ export default {
   // @import "../node_modules/bootstrap/scss/button-group";
   // @import "../node_modules/bootstrap/scss/input-group";
   // @import "../node_modules/bootstrap/scss/custom-forms";
-  // @import "../node_modules/bootstrap/scss/nav";
+  @import "../node_modules/bootstrap/scss/nav";
   // @import "../node_modules/bootstrap/scss/navbar";
   // @import "../node_modules/bootstrap/scss/card";
   // @import "../node_modules/bootstrap/scss/breadcrumb";
   // @import "../node_modules/bootstrap/scss/pagination";
-  // @import "../node_modules/bootstrap/scss/badge";
+  @import "../node_modules/bootstrap/scss/badge";
   // @import "../node_modules/bootstrap/scss/jumbotron";
   // @import "../node_modules/bootstrap/scss/alert";
   // @import "../node_modules/bootstrap/scss/progress";
