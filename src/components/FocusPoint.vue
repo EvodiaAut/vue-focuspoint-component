@@ -22,9 +22,9 @@ export default {
   },
   data() {
     return {
-      coordinates: this.offset ? this.offset : this.offsetDefault,
       boundingElement: null,
-      boundingPin: null
+      boundingPin: null,
+      coordinates: this.offset ? this.offset : this.offsetDefault
     }
   },
   mounted() {
