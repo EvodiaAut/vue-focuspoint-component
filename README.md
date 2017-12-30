@@ -20,8 +20,7 @@ The most common use case is to register the component globally.
 ```js
 // in your main.js or similar file
 import Vue from 'vue'
-import App from './App'
-import FocusPoint from '../node_modules/vue-focuspoint-component'
+import FocusPoint from 'vue-focuspoint-component'
 
 Vue.component('focus-point', FocusPoint)
 ```
@@ -29,10 +28,10 @@ Vue.component('focus-point', FocusPoint)
 Alternatively you can do this to register the components:
 
 ```js
-import FocusPoint from '../node_modules/vue-focuspoint-component'
+import FocusPoint from 'vue-focuspoint-component'
 
 export default {
-  name: 'app',
+  name: 'HelloWorld',
   components: {
     FocusPoint
   }
@@ -68,10 +67,10 @@ Other element
 
 ## Props
 
-|Prop|Type|Required|Default|Sync|Description
+|Prop|Type|Required|Sync|Default|Description
 |-|-|-|-|-|-|
-|focus|Object|false|null|true|current focus
-|focusDefault|Object|false|`{ x: 50, y: 50 }`|false|Set default focus
+|focus|Object|false|true|null|current focus
+|focusDefault|Object|false|false|`{ x: 50, y: 50 }`|Set default focus
 
 ## Build Setup
 
