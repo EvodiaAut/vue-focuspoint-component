@@ -1,9 +1,9 @@
 # [Beta] vue-focuspoint-component
 
-![vue2](https://img.shields.io/badge/vue-2.5.x-brightgreen.svg)
-![license](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)
-
 > Set focus point on elements
+
+[![npm](https://img.shields.io/npm/v/vue-focuspoint-component.svg?style=for-the-badge)](https://www.npmjs.com/package/vue-focuspoint-component)
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
 ## Demo
 
@@ -57,10 +57,10 @@ On your page you can now use html like this to render focus point:
 
 ## Props
 
-|Prop|Type|Default|Description
-|-|-|-|-|
-| [GET/SET] offset | Object | null | offset (coordinates) from pin
-| [SET]offsetDefault | Object | `{ x: 50, y: 50 }` | Set default for offset
+|Prop|Type|Required|Default|Sync|Description
+|-|-|-|-|-|-|
+|offset|Object|false|null|true|offset (coordinates) from pin
+|offsetDefault|Object|false|`{ x: 50, y: 50 }`|false|Set default for offset
 
 ## Build Setup
 
