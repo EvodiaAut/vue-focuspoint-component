@@ -1,7 +1,7 @@
+# [Beta] vue-focuspoint-component
+
 ![vue2](https://img.shields.io/badge/vue-2.5.x-brightgreen.svg)
 ![license](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)
-
-# [Beta] vue-focuspoint-component
 
 > Set focus point on elements
 
