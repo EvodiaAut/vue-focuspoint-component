@@ -70,8 +70,8 @@ Other element
 
 |Prop|Type|Required|Default|Sync|Description
 |-|-|-|-|-|-|
-|focus|Object|false|null|true|offset (coordinates) from pin
-|focusDefault|Object|false|`{ x: 50, y: 50 }`|false|Set default for offset
+|focus|Object|false|null|true|current focus
+|focusDefault|Object|false|`{ x: 50, y: 50 }`|false|Set default focus
 
 ## Build Setup
 
