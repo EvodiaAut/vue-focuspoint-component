@@ -11,9 +11,29 @@
 
 ## Install
 
-`[SOON]`
+`npm install vue-focuspoint-component` or `yarn add vue-focuspoint-component`
 
 ## Usage
+
+The most common use case is to register the component globally.
+
+```js
+//in your app.js or similar file
+import Vue from 'vue';
+import { FocusPoint } from 'vue-focuspoint-component'
+
+Vue.component('focus-point', FocusPoint)
+```
+
+Alternatively you can do this to register the components:
+
+```js
+import FocusPoint from './components/FocusPoint'
+
+Vue.use(FocusPoint)
+```
+
+On your page you can now use html like this to render focus point:
 
 ``` html
 <!-- IMAGE ELEMENT -->
