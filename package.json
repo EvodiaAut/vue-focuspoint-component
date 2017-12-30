@@ -13,9 +13,13 @@
     "url": "git+https://github.com/EvodiaAut/vue-focuspoint-component.git"
   },
   "keywords": [
+    "vue",
     "vuejs",
-    "focuspoint",
-    "component"
+    "vue2",
+    "vuejs2",
+    "vue-component",
+    "component",
+    "javascript"
   ],
   "license": "MIT",
   "bugs": {
