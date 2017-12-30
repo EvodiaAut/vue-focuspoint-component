@@ -45,7 +45,7 @@ Image element
 
 ``` html
 <!-- get focalpoint from image -->
-<focus-point :offset.sync="image">
+<focus-point :focus.sync="image">
   <img class="img-fluid" src="https://is.example.com/image.jpg">
 </focus-point>
 
@@ -59,7 +59,7 @@ Image element
 Other element
 
 ``` html
-<focus-point :offset.sync="simpleElement">
+<focus-point :focus.sync="simpleElement">
   <div class="jumbotron">
     <h1>Hello, world!</h1>
   </div>
@@ -70,8 +70,8 @@ Other element
 
 |Prop|Type|Required|Default|Sync|Description
 |-|-|-|-|-|-|
-|offset|Object|false|null|true|offset (coordinates) from pin
-|offsetDefault|Object|false|`{ x: 50, y: 50 }`|false|Set default for offset
+|focus|Object|false|null|true|offset (coordinates) from pin
+|focusDefault|Object|false|`{ x: 50, y: 50 }`|false|Set default for offset
 
 ## Build Setup
 

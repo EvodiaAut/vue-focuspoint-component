@@ -16,15 +16,15 @@
           <div class="col-md-6">
             <h4>Feel free set a focus point</h4>
             <p>Click on the element (picture)</p>
-            <focus-point :offset.sync="imageOne">
+            <focus-point :focus.sync="imageOne">
               <img class="img-fluid" src="./assets/image_1.jpg">
             </focus-point>
             <pre>{{imageOne}}</pre>
           </div>
           <div class="col-md-6">
             <h4>A saved focuspoint</h4>
-            <p>Use <code>:offset.sync="imageTwo"</code> for get new coordinates</p>
-            <focus-point :offset.sync="imageTwo">
+            <p>Use <code>:focus.sync="imageTwo"</code> for get new coordinates</p>
+            <focus-point :focus.sync="imageTwo">
               <img class="img-fluid" src="./assets/image_1.jpg">
             </focus-point>
             <pre>{{imageTwo}}</pre>
@@ -34,7 +34,7 @@
           <div class="col-md-6">
             <h4>Own focus pin</h4>
             <p><code>slot="pin"</code> Set your own pin</p>
-            <focus-point :offset.sync="imageThree">
+            <focus-point :focus.sync="imageThree">
               <template slot="pin">
                 <span class="badge badge-primary">artwork ;)</span>
               </template>
@@ -45,7 +45,7 @@
           <div class="col-md-6">
             <h4>Other elements</h4>
             <p>Test on another element</p>
-            <focus-point :offset.sync="imageFour">
+            <focus-point :focus.sync="imageFour">
               <div class="jumbotron">
                 <h1 class="display-4">Hello, world!</h1>
                 <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>

@@ -11,8 +11,8 @@
 export default {
   name: 'FocusPoint',
   props: {
-    offset: Object,
-    offsetDefault: {
+    focus: Object,
+    focusDefault: {
       type: Object,
       default: () => ({
         x: 50,
@@ -24,7 +24,7 @@ export default {
     return {
       boundingElement: null,
       boundingPin: null,
-      coordinates: this.offset ? this.offset : this.offsetDefault
+      coordinates: this.focus ? this.focus : this.focusDefault
     }
   },
   mounted() {
@@ -63,7 +63,7 @@ export default {
   },
   watch: {
     coordinates() {
-      this.$emit('update:offset', { ...this.coordinatesPercent, ...{ pixel: this.coordinates } })
+      this.$emit('update:focus', { ...this.coordinatesPercent, ...{ pixel: this.coordinates } })
     }
   }
 }
