@@ -1,6 +1,40 @@
-# vue-focuspoint-component
+![vue2](https://img.shields.io/badge/vue-2.5.x-brightgreen.svg)
+![license](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)
 
-> Set focuspoint on a element
+# [Beta] vue-focuspoint-component
+
+> Set focus point on elements
+
+## Demo
+
+[Demo here](https://evodiaaut.github.io/vue-focuspoint-component/)
+
+## Install
+
+`[SOON]`
+
+## Usage
+
+``` html
+<!-- IMAGE ELEMENT -->
+<focus-point :offset.sync="imageOne">
+  <img class="img-fluid" src="./assets/image_1.jpg">
+</focus-point>
+
+<!-- OTHER ELEMENT -->
+<focus-point :offset.sync="imageFour">
+  <div class="jumbotron">
+    <h1>Hello, world!</h1>
+  </div>
+</focus-point>
+```
+
+## Props
+
+|Prop|Type|Default|Description
+|-|-|-|-|
+| [GET/SET] offset | Object | null | offset (coordinates) from pin
+| [SET]offsetDefault | Object | `{ x: 50, y: 50 }` | Set default for offset
 
 ## Build Setup
 
@@ -18,13 +52,11 @@ npm run build
 npm run build --report
 
 # run unit tests
-npm run unit
+#[SOON] npm run unit
 
 # run e2e tests
-npm run e2e
+#[SOON] npm run e2e
 
 # run all tests
-npm test
+#[SOON] npm test
 ```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
