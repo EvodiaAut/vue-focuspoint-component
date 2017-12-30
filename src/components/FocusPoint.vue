@@ -63,7 +63,7 @@ export default {
   },
   watch: {
     coordinates() {
-      this.$emit('update:focus', { ...this.coordinatesPercent, ...{ pixel: this.coordinates } })
+      this.$emit('update:focus', this.coordinatesPercent)
     }
   }
 }
