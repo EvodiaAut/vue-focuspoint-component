@@ -50,8 +50,8 @@ export default {
       }
 
       return {
-        x: ((this.coordinates.x / this.boundingElement.width) * 100).toFixed(this.decimalLength),
-        y: ((this.coordinates.y / this.boundingElement.height) * 100).toFixed(this.decimalLength)
+        x: Math.max(((this.coordinates.x / this.boundingElement.width) * 100).toFixed(this.decimalLength), 0),
+        y: Math.max(((this.coordinates.y / this.boundingElement.height) * 100).toFixed(this.decimalLength), 0)
       }
     },
     pinStyle() {
