@@ -23,7 +23,7 @@
           </div>
           <div class="col-md-6">
             <h4>A saved focus point</h4>
-            <p>Use <code>:focus.sync="imageTwo"</code> for get new coordinates</p>
+            <p>Use <code>:focus.sync="image"</code> for get new coordinates</p>
             <focus-point :focus.sync="imageTwo">
               <img class="img-fluid" src="./assets/image_1.jpg">
             </focus-point>
