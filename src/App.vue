@@ -7,7 +7,7 @@
             <a class="nav-link" href="https://github.com/EvodiaAut/vue-focuspoint-component" target="_blank">Github</a>
           </li>
         </ul>
-        <h3 class="text-muted">vue-focuspoint-component</h3>
+        <h1 class="text-muted">vue-focuspoint-component</h1>
         <p class="lead">Set focus point on elements</p>
       </header>
       <hr>
