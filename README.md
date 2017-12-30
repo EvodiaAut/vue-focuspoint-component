@@ -43,15 +43,20 @@ On your page you can now use html like this to render focus point:
 Image element
 
 ``` html
-<!-- set focus point on image -->
+<!-- set focus point from `image` -->
 <focus-point :focus.sync="image">
-  <img class="img-fluid" src="https://is.example.com/image.jpg">
+  <img src="https://is.example.com/image.jpg">
 </focus-point>
 
-<!-- example to get image from image server -->
-<img src="https://is.example.com/{image.x}/{image.y}/1024/768/image.jpg">
+<!-- after click `image` object shows like this -->
+... image: {
+  "x": 50,
+  "y": 50
+}
 
-<!-- get image with focus point 50:50 in 1024x768px -->
+<!-- example to get `image` from image server -->
+<img src="https://is.example.com/{image.x}/{image.y}/1024/768/image.jpg">
+<!-- output -->
 <img src="https://is.example.com/50/50/1024/768/image.jpg">
 ```
 
