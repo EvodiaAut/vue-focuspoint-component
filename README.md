@@ -41,14 +41,25 @@ export default {
 
 On your page you can now use html like this to render focus point:
 
+Image element
+
 ``` html
-<!-- IMAGE ELEMENT -->
-<focus-point :offset.sync="imageOne">
-  <img class="img-fluid" src="./assets/image_1.jpg">
+<!-- get focalpoint from image -->
+<focus-point :offset.sync="image">
+  <img class="img-fluid" src="https://is.example.com/image.jpg">
 </focus-point>
 
-<!-- OTHER ELEMENT -->
-<focus-point :offset.sync="imageFour">
+<!-- get image from image server ... -->
+<img src="https://is.example.com/{image.x}/{image.y}/1024/768/image.jpg">
+
+<!-- get a image with focalpoint center/center -->
+<img src="https://is.example.com/50/50/1024/768/image.jpg">
+```
+
+Other element
+
+``` html
+<focus-point :offset.sync="simpleElement">
   <div class="jumbotron">
     <h1>Hello, world!</h1>
   </div>
