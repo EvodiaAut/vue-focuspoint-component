@@ -1,4 +1,4 @@
-# [Beta] vue-focuspoint-component
+# vue-focuspoint-component
 
 > Set focus point on elements
 
