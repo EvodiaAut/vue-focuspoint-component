@@ -87,10 +87,8 @@ export default {
 </script>
 
 <style lang="scss">
-  /*
-    FocusPoint
-  */
   @import "scss/focus-point";
+  @import "scss/focus-point-theme";
 
   /*
     Bootstrap

@@ -38,6 +38,15 @@ export default {
 }
 ```
 
+Style
+
+```scss
+// required
+@import "../node_modules/vue-focuspoint-component/src/scss/focus-point";
+// simple theme
+@import "../node_modules/vue-focuspoint-component/src/scss/focus-point-theme";
+```
+
 On your page you can now use html like this to render focus point:
 
 Image element
