@@ -18,9 +18,10 @@
 The most common use case is to register the component globally.
 
 ```js
-//in your app.js or similar file
-import Vue from 'vue';
-import { FocusPoint } from 'vue-focuspoint-component'
+// in your main.js or similar file
+import Vue from 'vue'
+import App from './App'
+import { FocusPoint } from '../node_modules/vue-focuspoint-component'
 
 Vue.component('focus-point', FocusPoint)
 ```
@@ -28,9 +29,14 @@ Vue.component('focus-point', FocusPoint)
 Alternatively you can do this to register the components:
 
 ```js
-import FocusPoint from './components/FocusPoint'
+import { FocusPoint } from '../node_modules/vue-focuspoint-component'
 
-Vue.use(FocusPoint)
+export default {
+  name: 'app',
+  components: {
+    FocusPoint
+  }
+}
 ```
 
 On your page you can now use html like this to render focus point:
