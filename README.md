@@ -86,8 +86,9 @@ Other elements (use careful a div, section, etc ... has not the same ratio by a 
 
 |Prop|Type|Required|Sync|Default|Description
 |-|-|-|-|-|-|
-|focus|Object|false|true|null|current focus
+|focus|Object|false|true|null|Current focus
 |focusDefault|Object|false|false|`{ x: 50, y: 50 }`|Set default focus
+|decimalLength|Number|false|false|5|Decimal length by focus
 
 ## Slots
 

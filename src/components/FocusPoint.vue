@@ -18,6 +18,10 @@ export default {
         x: 50,
         y: 50
       })
+    },
+    decimalLength: {
+      type: Number,
+      default: 5
     }
   },
   data() {
@@ -46,8 +50,8 @@ export default {
       }
 
       return {
-        x: (this.coordinates.x / this.boundingElement.width) * 100,
-        y: (this.coordinates.y / this.boundingElement.height) * 100
+        x: ((this.coordinates.x / this.boundingElement.width) * 100).toFixed(this.decimalLength),
+        y: ((this.coordinates.y / this.boundingElement.height) * 100).toFixed(this.decimalLength)
       }
     },
     pinStyle() {
