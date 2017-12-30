@@ -28,6 +28,7 @@ Vue.component('focus-point', FocusPoint)
 Alternatively you can do this to register the components:
 
 ```js
+// HelloWorld.vue
 import FocusPoint from 'vue-focuspoint-component'
 
 export default {
@@ -43,33 +44,35 @@ Style
 ```scss
 // required
 @import "../node_modules/vue-focuspoint-component/src/scss/focus-point";
+
 // simple theme
 @import "../node_modules/vue-focuspoint-component/src/scss/focus-point-theme";
 ```
 
-On your page you can now use html like this to render focus point:
+On your page you can now use html like this:
 
 Image element
 
 ``` html
-<!-- set focus point from `image` -->
+<!-- set focus point in data `image` -->
 <focus-point :focus.sync="image">
   <img src="https://is.example.com/image.jpg">
 </focus-point>
 
-<!-- after click `image` object shows like this -->
-... image: {
+<!-- after click data `image` shows like this -->
+image: {
   "x": 50,
   "y": 50
 }
 
-<!-- example to get `image` from image server -->
+<!-- example to get image from image server -->
 <img src="https://is.example.com/{image.x}/{image.y}/1024/768/image.jpg">
+
 <!-- output -->
 <img src="https://is.example.com/50/50/1024/768/image.jpg">
 ```
 
-Other element
+Other elements (use careful a div, section, etc ... has not the same ratio by a resize)
 
 ``` html
 <focus-point :focus.sync="simpleElement">
@@ -85,6 +88,12 @@ Other element
 |-|-|-|-|-|-|
 |focus|Object|false|true|null|current focus
 |focusDefault|Object|false|false|`{ x: 50, y: 50 }`|Set default focus
+
+## Slots
+
+|Name|Description
+|-|-|
+|pin|Inner html from pin
 
 ## Build Setup
 

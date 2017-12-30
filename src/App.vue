@@ -22,7 +22,7 @@
             <pre>{{imageOne}}</pre>
           </div>
           <div class="col-md-6">
-            <h4>A saved focuspoint</h4>
+            <h4>A saved focus point</h4>
             <p>Use <code>:focus.sync="imageTwo"</code> for get new coordinates</p>
             <focus-point :focus.sync="imageTwo">
               <img class="img-fluid" src="./assets/image_1.jpg">
