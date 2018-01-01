@@ -1,9 +1,9 @@
 <template>
   <div class="focus-point" @click="onClick">
     <slot></slot>
-    <span ref="pin" class="focus-point-pin" :style="pinStyle">
+    <div ref="pin" class="focus-point-pin" :style="pinStyle">
       <slot name="pin"></slot>
-    </span>
+    </div>
   </div>
 </template>
 
