@@ -4,6 +4,7 @@
 
 [![npm](https://img.shields.io/npm/v/vue-focuspoint-component.svg?style=for-the-badge)](https://www.npmjs.com/package/vue-focuspoint-component)
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg?style=for-the-badge)](https://github.com/EvodiaAut/vue-focuspoint-component/blob/master/LICENSE.md)
+[![npm](https://img.shields.io/npm/dt/vue-focuspoint-component.svg?style=for-the-badge)](https://www.npmjs.com/package/vue-focuspoint-component)
 
 ## Demo
 
@@ -39,21 +40,11 @@ export default {
 }
 ```
 
-Style
-
-```scss
-// required
-@import "../node_modules/vue-focuspoint-component/src/scss/focus-point";
-
-// simple theme
-@import "../node_modules/vue-focuspoint-component/src/scss/focus-point-theme";
-```
-
 On your page you can now use html like this:
 
 Image element
 
-``` html
+```html
 <!-- set focus point in data `image` -->
 <focus-point :focus.sync="image">
   <img src="https://is.example.com/image.jpg">
@@ -67,19 +58,28 @@ image: {
 
 <!-- example to get image from image server -->
 <img src="https://is.example.com/{image.x}/{image.y}/1024/768/image.jpg">
-
 <!-- output -->
 <img src="https://is.example.com/50/50/1024/768/image.jpg">
 ```
 
-Other elements (use careful a div, section, etc ... has not the same ratio by a resize)
+Other elements (use careful element with text has not the same ratio by a resize)
 
-``` html
-<focus-point :focus.sync="simpleElement">
+```html
+<focus-point :focus.sync="element">
   <div class="jumbotron">
     <h1>Hello, world!</h1>
   </div>
 </focus-point>
+```
+
+## CSS
+
+```scss
+// required and to get updates
+@import "./node_modules/vue-focuspoint-component/src/scss/focus-point";
+
+// simple theme
+@import "./node_modules/vue-focuspoint-component/src/scss/focus-point-theme";
 ```
 
 ## Props
@@ -88,13 +88,26 @@ Other elements (use careful a div, section, etc ... has not the same ratio by a 
 |-|-|-|-|-|-|
 |focus|Object|false|true|null|Current focus
 |focusDefault|Object|false|false|`{ x: 50, y: 50 }`|Set default focus
-|decimalLength|Number|false|false|5|Decimal length by focus
+|decimalLength|Number|false|false|5|Decimal length from focus
 
 ## Slots
 
 |Name|Description
 |-|-|
 |pin|Inner html from pin
+
+## Slots example
+
+Create your own pin
+
+```html
+<focus-point :focus.sync="image">
+  <template slot="pin">
+    <i class="cool-focus-icon"></i>
+  </template>
+  <img src="https://is.example.com/image.jpg">
+</focus-point>
+```
 
 ## Build Setup
 
