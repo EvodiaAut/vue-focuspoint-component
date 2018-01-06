@@ -19,7 +19,8 @@
     "vuejs2",
     "vue-component",
     "component",
-    "javascript"
+    "javascript",
+    "focuspoint"
   ],
   "license": "MIT",
   "bugs": {
