@@ -1,6 +1,6 @@
 {
   "name": "vue-focuspoint-component",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Set focus point on elements",
   "author": "EvodiaAut <evodia.aut@gmail.com>",
   "main": "src/index.js",
