@@ -19,7 +19,15 @@
             <focus-point :focus.sync="imageOne">
               <img class="img-fluid" src="./assets/image_1.jpg">
             </focus-point>
-            <pre>{{imageOne}}</pre>
+            <div class="row my-3" v-if="imageOne">
+              <div class="col-6">
+                <pre>{{imageOne}}</pre>
+              </div>
+              <div class="col-5 col-sm-4 ml-auto image-description">
+                <img class="img-fluid preview-image" src="./assets/image_1.jpg"
+                  :style="{objectPosition: `${imageOne.x}% ${imageOne.y}%`}">
+              </div>
+            </div>
           </div>
           <div class="col-md-6">
             <h4>A saved focus point</h4>
@@ -27,7 +35,15 @@
             <focus-point :focus.sync="imageTwo">
               <img class="img-fluid" src="./assets/image_1.jpg">
             </focus-point>
-            <pre>{{imageTwo}}</pre>
+            <div class="row my-3" v-if="imageTwo">
+              <div class="col-6">
+                <pre>{{imageTwo}}</pre>
+              </div>
+              <div class="col-5 col-sm-4 ml-auto image-description">
+                <img class="img-fluid preview-image" src="./assets/image_1.jpg"
+                  :style="{objectPosition: `${imageTwo.x}% ${imageTwo.y}%`}">
+              </div>
+            </div>
           </div>
         </div>
         <div class="row my-5">
@@ -36,11 +52,19 @@
             <p><code>slot="pin"</code> Set your own pin</p>
             <focus-point :focus.sync="imageThree">
               <template slot="pin">
-                <span class="badge badge-primary">artwork ;)</span>
+                😀
               </template>
               <img class="img-fluid" src="./assets/image_1.jpg">
             </focus-point>
-            <pre>{{imageThree}}</pre>
+            <div class="row my-3" v-if="imageThree">
+              <div class="col-6">
+                <pre>{{imageThree}}</pre>
+              </div>
+              <div class="col-5 col-sm-4 ml-auto image-description">
+                <img class="img-fluid preview-image" src="./assets/image_1.jpg"
+                  :style="{objectPosition: `${imageThree.x}% ${imageThree.y}%`}">
+              </div>
+            </div>
           </div>
           <div class="col-md-6">
             <h4>Other elements</h4>
@@ -56,7 +80,11 @@
                 </p>
               </div>
             </focus-point>
-            <pre>{{imageFour}}</pre>
+            <div class="row my-3">
+              <div class="col-6">
+                <pre>{{imageFour}}</pre>
+              </div>
+            </div>
           </div>
         </div>
       </main>
@@ -87,6 +115,9 @@ export default {
 </script>
 
 <style lang="scss">
+  /*
+    FocusPoint
+  */
   @import "scss/focus-point";
   @import "scss/focus-point-theme";
 
@@ -128,4 +159,35 @@ export default {
   // @import "../node_modules/bootstrap/scss/popover";
   // @import "../node_modules/bootstrap/scss/carousel";
   @import "../node_modules/bootstrap/scss/utilities";
+
+  /*
+    FOR EXAMPLE
+  */
+  pre {
+    font-size: 12px !important;
+    background: black;
+    color: #FFF;
+    padding: .5rem 1rem;
+    border-radius: 3px;
+  }
+
+  .preview-image {
+    transition: all .3s ease-in-out;
+    object-fit: none;
+  }
+
+  .image-description {
+    position: relative;
+    &:after {
+      content: "preview by css!";
+      position: absolute;
+      top: .3rem;
+      left: 0;
+      width: 100%;
+      color: white;
+      font-size: 12px;
+      text-align: center;
+      text-shadow: 0 0 5px #000;
+    }
+  }
 </style>
