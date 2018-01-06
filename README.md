@@ -45,21 +45,21 @@ On your page you can now use html like this:
 Image element
 
 ```html
-<!-- set focus point in data `image` -->
-<focus-point :focus.sync="image">
+<!-- set focus point in `tmpFocus` -->
+<focus-point :focus.sync="tmpFocus">
   <img src="https://is.example.com/image.jpg">
 </focus-point>
 
-<!-- after click data `image` shows like this -->
-image: {
-  "x": 50,
-  "y": 50
+<!-- after click `tmpFocus` shows like this in percent -->
+tmpFocus: {
+  "x": 35.83839,
+  "y": 62.7963
 }
 
 <!-- example to get image from image server -->
-<img src="https://is.example.com/{image.x}/{image.y}/1024/768/image.jpg">
-<!-- output -->
-<img src="https://is.example.com/50/50/1024/768/image.jpg">
+<img src="https://is.example.com/{tmpFocus.x}/{tmpFocus.y}/1024/768/image.jpg">
+<!-- output: we get from a 1920x1080 image the focus [35%:62% into 1024x768] -->
+<img src="https://is.example.com/35/62/1024/768/image.jpg">
 ```
 
 Other elements (use careful element with text has not the same ratio by a resize)
@@ -68,6 +68,7 @@ Other elements (use careful element with text has not the same ratio by a resize
 <focus-point :focus.sync="element">
   <div class="jumbotron">
     <h1>Hello, world!</h1>
+    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr...</p>
   </div>
 </focus-point>
 ```
