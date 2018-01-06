@@ -26,13 +26,14 @@ export default {
   },
   data() {
     return {
-      boundingElement: null,
       boundingPin: null,
+      boundingElement: null,
       coordinates: this.focus ? this.focus : this.focusDefault
     }
   },
   mounted() {
     this.boundingPin = this.$refs.pin.getBoundingClientRect()
+    this.updateFocus()
   },
   methods: {
     onClick({ clientX, clientY }) {
@@ -41,6 +42,10 @@ export default {
         x: clientX - this.boundingElement.left,
         y: clientY - this.boundingElement.top
       }
+      this.updateFocus()
+    },
+    updateFocus() {
+      this.$emit('update:focus', this.coordinatesPercent)
     }
   },
   computed: {
@@ -60,14 +65,9 @@ export default {
       }
 
       return {
-        top: `calc(${this.coordinatesPercent.y}% - ${this.boundingPin.height / 2}px)`,
-        left: `calc(${this.coordinatesPercent.x}% - ${this.boundingPin.width / 2}px)`
+        left: `calc(${this.coordinatesPercent.x}% - ${this.boundingPin.width / 2}px)`,
+        top: `calc(${this.coordinatesPercent.y}% - ${this.boundingPin.height / 2}px)`
       }
-    }
-  },
-  watch: {
-    coordinates() {
-      this.$emit('update:focus', this.coordinatesPercent)
     }
   }
 }
