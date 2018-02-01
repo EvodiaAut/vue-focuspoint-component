@@ -4,8 +4,9 @@
   &-pin {
     transition: all .2s ease-in-out;
     padding: 10px;
-    border-radius: 100%;
-    background: rgba(255, 0, 0, 0.60);
+    border-radius: 5px;
+    background: rgba(255, 0, 0, .6);
+    box-shadow: inset 0 0 3px rgba(0, 0, 0, .5);
     border: 1px solid #fff;
   }
 }

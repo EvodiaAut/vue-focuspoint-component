@@ -1,12 +1,12 @@
 .focus-point {
   position: relative;
 
+  &-pin {
+    position: absolute;
+  }
+
   * {
     pointer-events: none;
     user-select: none;
-  }
-
-  &-pin {
-    position: absolute;
   }
 }
