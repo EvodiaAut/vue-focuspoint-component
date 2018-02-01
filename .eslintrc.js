@@ -2,9 +2,8 @@
 
 module.exports = {
   root: true,
-  parser: 'babel-eslint',
   parserOptions: {
-    sourceType: 'module'
+    parser: 'babel-eslint'
   },
   env: {
     browser: true,
@@ -12,7 +11,7 @@ module.exports = {
   extends: 'neonblack/vue',
   // required to lint *.vue files
   plugins: [
-    'html'
+    'vue'
   ],
   // check if imports actually resolve
   'settings': {
