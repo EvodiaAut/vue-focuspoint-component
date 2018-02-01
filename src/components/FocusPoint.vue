@@ -45,7 +45,10 @@ export default {
       this.updateFocus()
     },
     updateFocus() {
-      this.$emit('update:focus', this.coordinatesPercent)
+      this.$emit('update:focus', {
+        x: this.coordinatesPercent.x.toFixed(this.decimalLength),
+        y: this.coordinatesPercent.y.toFixed(this.decimalLength)
+      })
     }
   },
   computed: {
@@ -55,8 +58,8 @@ export default {
       }
 
       return {
-        x: Math.max(((this.coordinates.x / this.boundingElement.width) * 100).toFixed(this.decimalLength), 0),
-        y: Math.max(((this.coordinates.y / this.boundingElement.height) * 100).toFixed(this.decimalLength), 0)
+        x: Math.max(((this.coordinates.x / this.boundingElement.width) * 100), 0),
+        y: Math.max(((this.coordinates.y / this.boundingElement.height) * 100), 0)
       }
     },
     pinStyle() {
