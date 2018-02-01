@@ -126,8 +126,8 @@ npm run build
 npm run build --report
 
 # run unit tests
-#[SOON] npm run unit
+npm run unit
 
 # run all tests
-#[SOON] npm test
+npm test
 ```
