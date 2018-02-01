@@ -128,9 +128,6 @@ npm run build --report
 # run unit tests
 #[SOON] npm run unit
 
-# run e2e tests
-#[SOON] npm run e2e
-
 # run all tests
 #[SOON] npm test
 ```
