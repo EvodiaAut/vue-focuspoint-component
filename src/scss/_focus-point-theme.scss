@@ -1,12 +1,14 @@
+@import "focus-point-variables";
+
 .focus-point {
-  cursor: crosshair;
+  cursor: $focuspoint-cursor;
 
   &-pin {
-    transition: all .2s ease-in-out;
-    padding: 10px;
-    border-radius: 5px;
-    background: rgba(255, 0, 0, .6);
-    box-shadow: inset 0 0 3px rgba(0, 0, 0, .5);
-    border: 1px solid #fff;
+    transition: $focuspoint-transition;
+    padding: $focuspoint-padding;
+    border-radius: $focuspoint-radius;
+    background: $focuspoint-background;
+    box-shadow:$focuspoint-shadow;
+    border: $focuspoint-border;
   }
 }

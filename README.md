@@ -83,6 +83,20 @@ Other elements (use careful element with text has not the same ratio by a resize
 @import "./node_modules/vue-focuspoint-component/src/scss/focus-point-theme";
 ```
 
+Do you like my theme but not the colors or paddings, ...?
+
+```scss
+@import "./node_modules/vue-focuspoint-component/src/scss/focus-point";
+
+// overwrite variables from the simple theme
+$focuspoint-background: blue;
+$focuspoint-border: 3px solid white;
+$focuspoint-radius: 2px;
+// find more variables in /src/scss/_focus-point-variables.scss
+
+@import "./node_modules/vue-focuspoint-component/src/scss/focus-point-theme";
+```
+
 ## Props
 
 |Prop|Type|Required|Sync|Default|Description
