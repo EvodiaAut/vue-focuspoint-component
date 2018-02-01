@@ -10,7 +10,7 @@ const propsData = {
     x: 50,
     y: 50
   },
-  decimalLength: 5
+  decimalLength: 0
 }
 
 describe('FocusPoint.vue', () => {

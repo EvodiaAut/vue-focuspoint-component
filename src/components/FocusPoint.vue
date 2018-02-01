@@ -21,7 +21,7 @@ export default {
     },
     decimalLength: {
       type: Number,
-      default: 5
+      default: 0
     }
   },
   data() {

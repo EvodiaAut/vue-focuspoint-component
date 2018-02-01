@@ -89,7 +89,7 @@ Other elements (use careful element with text has not the same ratio by a resize
 |-|-|-|-|-|-|
 |focus|Object|false|true|null|Current focus
 |focusDefault|Object|false|false|`{ x: 50, y: 50 }`|Set default focus
-|decimalLength|Number|false|false|5|Decimal length from focus
+|decimalLength|Number|false|false|0|Decimal length from focus
 
 ## Slots
 
