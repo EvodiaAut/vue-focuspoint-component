@@ -24,7 +24,7 @@ export default {
     return {
       pin: null,
       wrap: null,
-      coordinates: this.focus ? this.focus : this.default
+      coordinates: this.focus || this.default
     }
   },
   mounted() {
