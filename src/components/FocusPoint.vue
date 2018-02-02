@@ -29,7 +29,7 @@ export default {
   },
   mounted() {
     this.pin = this.$refs.pin.getBoundingClientRect()
-    this.updateFocus()
+    this.update()
   },
   methods: {
     onClick({ clientX, clientY }) {
@@ -38,9 +38,9 @@ export default {
         x: clientX - this.wrap.left,
         y: clientY - this.wrap.top
       }
-      this.updateFocus()
+      this.update()
     },
-    updateFocus() {
+    update() {
       this.$emit('update:focus', {
         x: Math.round(this.coordinatesPercent.x),
         y: Math.round(this.coordinatesPercent.y)
