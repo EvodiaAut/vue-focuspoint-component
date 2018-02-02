@@ -9,6 +9,17 @@
         </ul>
         <h1 class="text-muted">vue-focuspoint-component</h1>
         <p class="lead">Set focus point on elements</p>
+        <p class="d-flex flex-wrap">
+          <a href="https://www.npmjs.com/package/vue-focuspoint-component" target="_blank">
+            <img class="m-1" src="https://img.shields.io/npm/v/vue-focuspoint-component.svg?style=for-the-badge" alt="vue-focuspoint-component npm">
+          </a>
+          <a href="https://github.com/EvodiaAut/vue-focuspoint-component/blob/master/LICENSE.md" target="_blank">
+            <img class="m-1" src="https://img.shields.io/github/license/mashape/apistatus.svg?style=for-the-badge" alt="vue-focuspoint-component license">
+          </a>
+          <a href="https://www.npmjs.com/package/vue-focuspoint-component" target="_blank">
+            <img class="m-1" src="https://img.shields.io/npm/dt/vue-focuspoint-component.svg?style=for-the-badge" alt="vue-focuspoint-component npm">
+          </a>
+        </p>
       </header>
       <hr>
       <main role="main">
@@ -17,14 +28,14 @@
             <h4>Feel free set a focus point</h4>
             <p>Click on the element (picture)</p>
             <focus-point :focus.sync="imageOne">
-              <img class="img-fluid" src="./assets/image_1.jpg">
+              <img class="img-fluid" src="./assets/image_1.jpg" alt="vue-focuspoint-component">
             </focus-point>
             <div class="row my-3" v-if="imageOne">
               <div class="col-6">
                 <pre>{{imageOne}}</pre>
               </div>
               <div class="col-5 col-sm-4 ml-auto image-description">
-                <img class="img-fluid preview-image" src="./assets/image_1.jpg"
+                <img class="img-fluid preview-image" src="./assets/image_1.jpg" alt="vue-focuspoint-component"
                   :style="{objectPosition: `${imageOne.x}% ${imageOne.y}%`}">
               </div>
             </div>
@@ -33,14 +44,14 @@
             <h4>A saved focus point</h4>
             <p>Use <code>:focus.sync="image"</code> for get new coordinates</p>
             <focus-point :focus.sync="imageTwo">
-              <img class="img-fluid" src="./assets/image_1.jpg">
+              <img class="img-fluid" src="./assets/image_1.jpg" alt="vue-focuspoint-component">
             </focus-point>
             <div class="row my-3" v-if="imageTwo">
               <div class="col-6">
                 <pre>{{imageTwo}}</pre>
               </div>
               <div class="col-5 col-sm-4 ml-auto image-description">
-                <img class="img-fluid preview-image" src="./assets/image_1.jpg"
+                <img class="img-fluid preview-image" src="./assets/image_1.jpg" alt="vue-focuspoint-component"
                   :style="{objectPosition: `${imageTwo.x}% ${imageTwo.y}%`}">
               </div>
             </div>
@@ -54,14 +65,14 @@
               <template slot="pin">
                 😀
               </template>
-              <img class="img-fluid" src="./assets/image_1.jpg">
+              <img class="img-fluid" src="./assets/image_1.jpg" alt="vue-focuspoint-component">
             </focus-point>
             <div class="row my-3" v-if="imageThree">
               <div class="col-6">
                 <pre>{{imageThree}}</pre>
               </div>
               <div class="col-5 col-sm-4 ml-auto image-description">
-                <img class="img-fluid preview-image" src="./assets/image_1.jpg"
+                <img class="img-fluid preview-image" src="./assets/image_1.jpg" alt="vue-focuspoint-component"
                   :style="{objectPosition: `${imageThree.x}% ${imageThree.y}%`}">
               </div>
             </div>
