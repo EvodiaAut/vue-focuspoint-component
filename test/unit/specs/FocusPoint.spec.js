@@ -9,8 +9,7 @@ const propsData = {
   default: {
     x: 50,
     y: 50
-  },
-  decimalLength: 0
+  }
 }
 
 describe('FocusPoint.vue', () => {
@@ -20,7 +19,6 @@ describe('FocusPoint.vue', () => {
     expect(wrapper.isVueInstance()).toBe(true)
     expect(wrapper.props().focus).toBe(propsData.focus)
     expect(wrapper.props().default).toBe(propsData.default)
-    expect(wrapper.props().decimalLength).toBe(propsData.decimalLength)
   })
 
   it('should render correct pin', () => {

@@ -18,10 +18,6 @@ export default {
         x: 50,
         y: 50
       })
-    },
-    decimalLength: {
-      type: Number,
-      default: 0
     }
   },
   data() {
@@ -46,8 +42,8 @@ export default {
     },
     updateFocus() {
       this.$emit('update:focus', {
-        x: this.coordinatesPercent.x.toFixed(this.decimalLength),
-        y: this.coordinatesPercent.y.toFixed(this.decimalLength)
+        x: Math.round(this.coordinatesPercent.x),
+        y: Math.round(this.coordinatesPercent.y)
       })
     }
   },
@@ -58,8 +54,8 @@ export default {
       }
 
       return {
-        x: Math.max(((this.coordinates.x / this.boundingElement.width) * 100), 0),
-        y: Math.max(((this.coordinates.y / this.boundingElement.height) * 100), 0)
+        x: (this.coordinates.x / this.boundingElement.width) * 100,
+        y: (this.coordinates.y / this.boundingElement.height) * 100
       }
     },
     pinStyle() {

@@ -103,7 +103,6 @@ $focuspoint-radius: 2px;
 |-|-|-|-|-|-|
 |focus|Object|false|true|null|Current focus
 |default|Object|false|false|`{ x: 50, y: 50 }`|Set default focus
-|decimalLength|Number|false|false|0|Decimal length from focus
 
 ## Slots
 
