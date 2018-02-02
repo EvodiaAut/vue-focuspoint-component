@@ -1,5 +1,5 @@
 <template>
-  <div class="focus-point" @click="onClick">
+  <div class="focus-point" @click="click">
     <slot></slot>
     <div ref="pin" class="focus-point-pin" :style="pinStyle">
       <slot name="pin"></slot>
@@ -32,7 +32,7 @@ export default {
     this.update()
   },
   methods: {
-    onClick({ clientX, clientY }) {
+    click({ clientX, clientY }) {
       this.wrap = this.$el.getBoundingClientRect()
       this.coordinates = {
         x: clientX - this.wrap.left,
