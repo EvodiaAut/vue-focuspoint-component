@@ -23,7 +23,7 @@ export default {
   data() {
     return {
       pin: null,
-      boundingElement: null,
+      wrap: null,
       coordinates: this.focus ? this.focus : this.default
     }
   },
@@ -33,10 +33,10 @@ export default {
   },
   methods: {
     onClick({ clientX, clientY }) {
-      this.boundingElement = this.$el.getBoundingClientRect()
+      this.wrap = this.$el.getBoundingClientRect()
       this.coordinates = {
-        x: clientX - this.boundingElement.left,
-        y: clientY - this.boundingElement.top
+        x: clientX - this.wrap.left,
+        y: clientY - this.wrap.top
       }
       this.updateFocus()
     },
@@ -49,13 +49,13 @@ export default {
   },
   computed: {
     coordinatesPercent() {
-      if (!this.boundingElement) {
+      if (!this.wrap) {
         return this.coordinates
       }
 
       return {
-        x: (this.coordinates.x / this.boundingElement.width) * 100,
-        y: (this.coordinates.y / this.boundingElement.height) * 100
+        x: (this.coordinates.x / this.wrap.width) * 100,
+        y: (this.coordinates.y / this.wrap.height) * 100
       }
     },
     pinStyle() {
