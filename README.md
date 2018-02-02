@@ -50,10 +50,10 @@ Image element
   <img src="https://is.example.com/image.jpg">
 </focus-point>
 
-<!-- after click `tmpFocus` shows like this in percent -->
+<!-- after click `tmpFocus` shows like this -->
 tmpFocus: {
-  "x": 35.83839,
-  "y": 62.7963
+  "x": 35,
+  "y": 62
 }
 
 <!-- example to get image from image server -->
@@ -102,7 +102,7 @@ $focuspoint-radius: 2px;
 |Prop|Type|Required|Sync|Default|Description
 |-|-|-|-|-|-|
 |focus|Object|false|true|null|Current focus
-|focusDefault|Object|false|false|`{ x: 50, y: 50 }`|Set default focus
+|default|Object|false|false|`{ x: 50, y: 50 }`|Set default focus
 |decimalLength|Number|false|false|0|Decimal length from focus
 
 ## Slots

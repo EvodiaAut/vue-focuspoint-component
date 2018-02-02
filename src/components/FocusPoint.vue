@@ -12,7 +12,7 @@ export default {
   name: 'FocusPoint',
   props: {
     focus: Object,
-    focusDefault: {
+    default: {
       type: Object,
       default: () => ({
         x: 50,
@@ -28,7 +28,7 @@ export default {
     return {
       boundingPin: null,
       boundingElement: null,
-      coordinates: this.focus ? this.focus : this.focusDefault
+      coordinates: this.focus ? this.focus : this.default
     }
   },
   mounted() {

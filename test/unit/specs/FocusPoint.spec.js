@@ -6,7 +6,7 @@ const propsData = {
     x: 50,
     y: 50
   },
-  focusDefault: {
+  default: {
     x: 50,
     y: 50
   },
@@ -19,7 +19,7 @@ describe('FocusPoint.vue', () => {
 
     expect(wrapper.isVueInstance()).toBe(true)
     expect(wrapper.props().focus).toBe(propsData.focus)
-    expect(wrapper.props().focusDefault).toBe(propsData.focusDefault)
+    expect(wrapper.props().default).toBe(propsData.default)
     expect(wrapper.props().decimalLength).toBe(propsData.decimalLength)
   })
 
