@@ -22,13 +22,13 @@ export default {
   },
   data() {
     return {
-      boundingPin: null,
+      pin: null,
       boundingElement: null,
       coordinates: this.focus ? this.focus : this.default
     }
   },
   mounted() {
-    this.boundingPin = this.$refs.pin.getBoundingClientRect()
+    this.pin = this.$refs.pin.getBoundingClientRect()
     this.updateFocus()
   },
   methods: {
@@ -59,13 +59,13 @@ export default {
       }
     },
     pinStyle() {
-      if (!this.boundingPin) {
+      if (!this.pin) {
         return null
       }
 
       return {
-        left: `calc(${this.coordinatesPercent.x}% - ${this.boundingPin.width / 2}px)`,
-        top: `calc(${this.coordinatesPercent.y}% - ${this.boundingPin.height / 2}px)`
+        left: `calc(${this.coordinatesPercent.x}% - ${this.pin.width / 2}px)`,
+        top: `calc(${this.coordinatesPercent.y}% - ${this.pin.height / 2}px)`
       }
     }
   }
