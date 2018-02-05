@@ -91,7 +91,7 @@
                 </p>
               </div>
             </focus-point>
-            <div class="row my-3">
+            <div class="row my-3" v-if="imageFour">
               <div class="col-6">
                 <pre>{{imageFour}}</pre>
               </div>
