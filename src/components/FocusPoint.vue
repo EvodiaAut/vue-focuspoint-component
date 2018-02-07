@@ -23,8 +23,7 @@ export default {
   data() {
     return {
       pin: null,
-      wrap: null,
-      coordinates: this.focus || this.default
+      wrap: null
     }
   },
   mounted() {
@@ -33,35 +32,23 @@ export default {
   methods: {
     click({ clientX, clientY }) {
       this.wrap = this.$el.getBoundingClientRect()
-      this.coordinates = {
-        x: clientX - this.wrap.left,
-        y: clientY - this.wrap.top
-      }
       this.$emit('update:focus', {
-        x: Math.round(this.coordinatesPercent.x),
-        y: Math.round(this.coordinatesPercent.y)
+        x: Math.round(((clientX - this.wrap.left) / this.wrap.width) * 100),
+        y: Math.round(((clientY - this.wrap.top) / this.wrap.height) * 100)
       })
     }
   },
   computed: {
-    coordinatesPercent() {
-      if (!this.wrap) {
-        return this.coordinates
-      }
-
-      return {
-        x: (this.coordinates.x / this.wrap.width) * 100,
-        y: (this.coordinates.y / this.wrap.height) * 100
-      }
-    },
     pinStyle() {
       if (!this.pin) {
         return null
       }
 
+      const focus = this.focus || this.default
+
       return {
-        left: `calc(${this.coordinatesPercent.x}% - ${this.pin.width / 2}px)`,
-        top: `calc(${this.coordinatesPercent.y}% - ${this.pin.height / 2}px)`
+        left: `calc(${focus.x}% - ${this.pin.width / 2}px)`,
+        top: `calc(${focus.y}% - ${this.pin.height / 2}px)`
       }
     }
   }
