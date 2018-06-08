@@ -40,16 +40,20 @@
           return null
         }
 
+        const { width, height } = this.pin
+
         if (!this.value) {
           return {
-            left: `calc(50% - ${this.pin.width / 2}px)`,
-            top: `calc(50% - ${this.pin.height / 2}px)`
+            left: this.s(50, width),
+            top: this.s(50, height)
           }
         }
 
+        const { x, y } = this.value
+
         return {
-          left: `calc(${this.value.x}% - ${this.pin.width / 2}px)`,
-          top: `calc(${this.value.y}% - ${this.pin.height / 2}px)`
+          left: this.s(x, width),
+          top: this.s(y, height)
         }
       }
     },
@@ -58,11 +62,17 @@
     },
     methods: {
       click({ clientX, clientY }) {
-        this.wrap = this.$el.getBoundingClientRect()
+        const { left, width, top, height } = this.$el.getBoundingClientRect()
         this.$emit('input', {
-          x: Math.round(((clientX - this.wrap.left) / this.wrap.width) * 100),
-          y: Math.round(((clientY - this.wrap.top) / this.wrap.height) * 100)
+          x: this.c(clientX, left, width),
+          y: this.c(clientY, top, height)
         })
+      },
+      c(c, mw, w) {
+        return Math.round(((c - mw) / w) * 100)
+      },
+      s(w, mw) {
+        return `calc(${w}% - ${mw / 2}px)`
       }
     }
   }

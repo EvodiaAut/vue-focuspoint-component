@@ -93,7 +93,7 @@
           </div>
           <div class="col-md-6">
             <h4>A saved focus point</h4>
-            <p>Use <code>v-model="imageOne"</code> for get new coordinates</p>
+            <p><code>v-model="imageOne"</code> <pre class="text-truncate d-inline">{{ imageTwo }}</pre></p>
             <focus-point
               v-model="imageTwo"
             >
