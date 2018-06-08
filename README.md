@@ -45,21 +45,21 @@ On your page you can now use html like this:
 Image element
 
 ```html
-<!-- set focus point in `tmpFocus` -->
+<!-- set focus point in `focus` -->
 <focus-point
-  v-model="tmpFocus"
+  v-model="focus"
 >
   <img src="https://is.example.com/image.jpg">
 </focus-point>
 
-<!-- after click `tmpFocus` shows like this -->
-tmpFocus: {
+<!-- after click `focus` shows like this -->
+focus: {
   "x": 35,
   "y": 62
 }
 
 <!-- example to get image from image server -->
-<img src="https://is.example.com/{tmpFocus.x}/{tmpFocus.y}/1024/768/image.jpg">
+<img src="https://is.example.com/{focus.x}/{focus.y}/1024/768/image.jpg">
 <!-- output: we get from a 1920x1080 image the focus [35%:62% into 1024x768] -->
 <img src="https://is.example.com/35/62/1024/768/image.jpg">
 ```
@@ -104,10 +104,9 @@ $focuspoint-radius: 2px;
 
 ## Props
 
-|Prop|Type|Required|Sync|Default|Description
-|-|-|-|-|-|-|
-|focus|Object|false|true|{}|Current focus
-|default|Object|false|false|`{ x: 50, y: 50 }`|Set default focus
+|Prop|Type|Required|Default|Description
+|-|-|-|-|-|
+|focus|Object|false|`{ x: 50, y: 50 }`|Focus
 
 ## Slots
 

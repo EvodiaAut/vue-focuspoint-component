@@ -93,7 +93,7 @@
           </div>
           <div class="col-md-6">
             <h4>A saved focus point</h4>
-            <p><code>v-model="imageOne"</code> <pre class="text-truncate d-inline">{{ imageTwo }}</pre></p>
+            <p><code>v-model="imageOne"</code></p>
             <focus-point
               v-model="imageTwo"
             >
@@ -211,10 +211,13 @@
       return {
         imageOne: null,
         imageTwo: {
-          x: 94,
-          y: 19
+          x: 69,
+          y: 60
         },
-        imageThree: null,
+        imageThree: {
+          x: 69,
+          y: 58
+        },
         imageFour: null
       }
     }
