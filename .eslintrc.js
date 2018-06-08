@@ -9,15 +9,11 @@ module.exports = {
     browser: true,
   },
   extends: 'neonblack/vue',
-  // required to lint *.vue files
-  plugins: [
-    'vue'
-  ],
   // check if imports actually resolve
-  'settings': {
+  settings: {
     'import/resolver': {
-      'webpack': {
-        'config': 'build/webpack.base.conf.js'
+      webpack: {
+        config: 'build/webpack.base.conf.js'
       }
     }
   },

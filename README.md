@@ -46,7 +46,9 @@ Image element
 
 ```html
 <!-- set focus point in `tmpFocus` -->
-<focus-point :focus.sync="tmpFocus">
+<focus-point
+  :focus.sync="tmpFocus"
+>
   <img src="https://is.example.com/image.jpg">
 </focus-point>
 
@@ -65,8 +67,12 @@ tmpFocus: {
 Other elements (use careful element with text has not the same ratio by a resize)
 
 ```html
-<focus-point :focus.sync="element">
-  <div class="jumbotron">
+<focus-point
+  :focus.sync="element"
+>
+  <div
+    class="jumbotron"
+  >
     <h1>Hello, world!</h1>
     <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr...</p>
   </div>
@@ -78,7 +84,6 @@ Other elements (use careful element with text has not the same ratio by a resize
 ```scss
 // required and to get updates
 @import "./node_modules/vue-focuspoint-component/src/scss/focus-point";
-
 // simple theme
 @import "./node_modules/vue-focuspoint-component/src/scss/focus-point-theme";
 ```
@@ -101,7 +106,7 @@ $focuspoint-radius: 2px;
 
 |Prop|Type|Required|Sync|Default|Description
 |-|-|-|-|-|-|
-|focus|Object|false|true|null|Current focus
+|focus|Object|false|true|{}|Current focus
 |default|Object|false|false|`{ x: 50, y: 50 }`|Set default focus
 
 ## Slots
@@ -115,9 +120,13 @@ $focuspoint-radius: 2px;
 Create your own pin
 
 ```html
-<focus-point :focus.sync="image">
-  <template slot="pin">
-    <i class="cool-focus-icon"></i>
+<focus-point
+  :focus.sync="image"
+>
+  <template
+    slot="pin"
+  >
+    <i class="cool-focus-icon"/>
   </template>
   <img src="https://is.example.com/image.jpg">
 </focus-point>
