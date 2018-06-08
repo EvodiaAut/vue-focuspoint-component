@@ -66,7 +66,7 @@
             <h4>Feel free set a focus point</h4>
             <p>Click on the element (picture)</p>
             <focus-point
-              :focus.sync="imageOne"
+              v-model="imageOne"
             >
               <img
                 class="img-fluid"
@@ -93,9 +93,9 @@
           </div>
           <div class="col-md-6">
             <h4>A saved focus point</h4>
-            <p>Use <code>:focus.sync="imageOne"</code> for get new coordinates</p>
+            <p>Use <code>v-model="imageOne"</code> for get new coordinates</p>
             <focus-point
-              :focus.sync="imageTwo"
+              v-model="imageTwo"
             >
               <img
                 class="img-fluid"
@@ -126,7 +126,7 @@
             <h4>Own focus pin</h4>
             <p><code>slot="pin"</code> Set your own pin</p>
             <focus-point
-              :focus.sync="imageThree"
+              v-model="imageThree"
             >
               <template
                 slot="pin"
@@ -160,7 +160,7 @@
             <h4>Other elements</h4>
             <p>Test on another element</p>
             <focus-point
-              :focus.sync="imageFour"
+              v-model="imageFour"
             >
               <div class="jumbotron">
                 <h1 class="display-4">Hello, world!</h1>

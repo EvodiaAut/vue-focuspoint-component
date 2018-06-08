@@ -47,7 +47,7 @@ Image element
 ```html
 <!-- set focus point in `tmpFocus` -->
 <focus-point
-  :focus.sync="tmpFocus"
+  v-model="tmpFocus"
 >
   <img src="https://is.example.com/image.jpg">
 </focus-point>
@@ -68,7 +68,7 @@ Other elements (use careful element with text has not the same ratio by a resize
 
 ```html
 <focus-point
-  :focus.sync="element"
+  v-model="element"
 >
   <div
     class="jumbotron"
@@ -121,7 +121,7 @@ Create your own pin
 
 ```html
 <focus-point
-  :focus.sync="image"
+  v-model="image"
 >
   <template
     slot="pin"

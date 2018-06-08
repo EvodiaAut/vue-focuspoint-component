@@ -20,7 +20,7 @@
   export default {
     name: 'FocusPoint',
     props: {
-      focus: {
+      value: {
         type: Object,
         default: () => {}
       },
@@ -44,7 +44,7 @@
           return null
         }
 
-        const focus = this.focus || this.default
+        const focus = this.value || this.default
 
         return {
           left: `calc(${focus.x}% - ${this.pin.width / 2}px)`,
@@ -58,7 +58,7 @@
     methods: {
       click({ clientX, clientY }) {
         this.wrap = this.$el.getBoundingClientRect()
-        this.$emit('update:focus', {
+        this.$emit('input', {
           x: Math.round(((clientX - this.wrap.left) / this.wrap.width) * 100),
           y: Math.round(((clientY - this.wrap.top) / this.wrap.height) * 100)
         })
