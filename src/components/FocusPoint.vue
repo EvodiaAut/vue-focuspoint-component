@@ -30,8 +30,7 @@
     },
     data() {
       return {
-        pin: null,
-        wrap: null
+        pin: null
       }
     },
     computed: {
