@@ -102,11 +102,11 @@ $focuspoint-radius: 2px;
 @import "./node_modules/vue-focuspoint-component/src/scss/focus-point-theme";
 ```
 
-## Props
+## V-Model
 
-|Prop|Type|Required|Default|Description
-|-|-|-|-|-|
-|focus|Object|false|`{ x: 50, y: 50 }`|Focus
+|Type|Required|Default|Description
+|-|-|-|-|
+|Object|false|`{ x: 50, y: 50 }`|Focus
 
 ## Slots
 
