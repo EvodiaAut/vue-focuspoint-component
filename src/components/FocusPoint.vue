@@ -22,10 +22,6 @@
     props: {
       value: {
         type: Object,
-        default: () => {}
-      },
-      default: {
-        type: Object,
         default: () => ({
           x: 50,
           y: 50
@@ -44,11 +40,16 @@
           return null
         }
 
-        const focus = this.value || this.default
+        if (!this.value) {
+          return {
+            left: `calc(50% - ${this.pin.width / 2}px)`,
+            top: `calc(50% - ${this.pin.height / 2}px)`
+          }
+        }
 
         return {
-          left: `calc(${focus.x}% - ${this.pin.width / 2}px)`,
-          top: `calc(${focus.y}% - ${this.pin.height / 2}px)`
+          left: `calc(${this.value.x}% - ${this.pin.width / 2}px)`,
+          top: `calc(${this.value.y}% - ${this.pin.height / 2}px)`
         }
       }
     },
